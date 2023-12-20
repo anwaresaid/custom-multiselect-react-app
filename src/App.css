@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: rgb(20, 20, 71);
+  margin: 0;
+}
+h3 {
+  color: rgb(20, 20, 71, 0.5);
+}
+
+.multi-select-autocomplete {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  border-radius: 10px; /* Circular shape */
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.multi-select-autocomplete input {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+.multi-select-autocomplete .dropdown-menu {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 100%;
+  left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  display: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid#1d123b;
+}
+
+.multi-select-autocomplete .dropdown-menu.show {
+  display: block;
+}
+
+.multi-select-autocomplete .multi-select-option {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #1d123b;
+  gap: 0;
+}
+.multi-select-option:hover {
+  background-color: #e0e0e0;
+}
+.dropdown-icon {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-botton {
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  z-index: 2;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  color: darkblue;
+  transform: translateX(2px);
+}
+
+.multi-select-autocomplete .multi-select-option.selected {
+  background-color: #eee;
+}
+
+.tags-input-container {
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.tag-item {
+  background-color: #d4d8dd;
+  color: rgb(49, 48, 80);
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.close {
+  margin-left: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 5px;
+  cursor: pointer;
   color: white;
+  background-color: grey;
+  width: 20px;
+  height: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.multi-select-img {
+  width: 40px;
+  height: 40px;
+}
+
+.option-container {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+.option-text-container {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: rgb(22, 22, 53);
+  padding: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.parent:hover .child {
+  background-color: lightblue;
 }
