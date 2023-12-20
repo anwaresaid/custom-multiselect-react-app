@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/custom-multiselect-react-app/static/css/main.de37f59f.css",
+    "main.css": "/custom-multiselect-react-app/static/css/main.fe389ee0.css",
     "main.js": "/custom-multiselect-react-app/static/js/main.16105a34.js",
     "static/js/787.d4aba7ab.chunk.js": "/custom-multiselect-react-app/static/js/787.d4aba7ab.chunk.js",
     "index.html": "/custom-multiselect-react-app/index.html",
-    "main.de37f59f.css.map": "/custom-multiselect-react-app/static/css/main.de37f59f.css.map",
+    "main.fe389ee0.css.map": "/custom-multiselect-react-app/static/css/main.fe389ee0.css.map",
     "main.16105a34.js.map": "/custom-multiselect-react-app/static/js/main.16105a34.js.map",
     "787.d4aba7ab.chunk.js.map": "/custom-multiselect-react-app/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de37f59f.css",
+    "static/css/main.fe389ee0.css",
     "static/js/main.16105a34.js"
   ]
 }
