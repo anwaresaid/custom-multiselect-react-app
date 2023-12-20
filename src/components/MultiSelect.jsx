@@ -7,12 +7,14 @@ function MultiSelect({ placeholder }) {
   const [inputValue, setInputValue] = React.useState("");
   const [selectedOptions, setSelectedOptions] = React.useState([]);
   const [isVisible, setIsvisible] = React.useState(false);
+
   const inputRef = React.useRef(null);
   const dropdownRef = React.useRef(null);
 
   const [executeSearch, { loading, data, error }] =
     useLazyQuery(GET_DATA_QUERY);
 
+  //close dropdown list if clicked outside of it
   useEffect(() => {
     if (isVisible) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -26,6 +28,7 @@ function MultiSelect({ placeholder }) {
     };
   }, [isVisible]);
 
+  //fetching data
   useEffect(() => {
     const timer = setTimeout(() => {
       if (inputValue) {
@@ -36,12 +39,14 @@ function MultiSelect({ placeholder }) {
     return () => clearTimeout(timer);
   }, [inputValue, executeSearch]);
 
+  //detecting textfield input and sending request accordingly
   const handleInputChange = (event) => {
     const newInputValue = event.target.value;
     setInputValue(newInputValue);
     setIsvisible(true);
   };
 
+  //adding or removing clicked item from the dropdown list
   const handleOptionClick = (option) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions?.filter((o) => o !== option));
@@ -49,10 +54,12 @@ function MultiSelect({ placeholder }) {
       setSelectedOptions([...selectedOptions, option]);
     }
   };
+  //open dropdown menu
   const handleOpenMenu = () => {
     if (data) setIsvisible(true);
   };
 
+  //rendering list item
   const renderOption = (option) => (
     <div
       key={option.name}
@@ -76,6 +83,8 @@ function MultiSelect({ placeholder }) {
       </div>
     </div>
   );
+
+  //render selected options from dropdown as tags
   const renderSelectedOptions = () => (
     <>
       {selectedOptions.map((option, index) => (
@@ -95,13 +104,16 @@ function MultiSelect({ placeholder }) {
     }
   };
 
+  //remove a selected item
   const removeTag = (index) => {
     setSelectedOptions(selectedOptions.filter((_, i) => i !== index));
   };
 
+  //focus on the textbox
   const focusInput = () => {
     inputRef.current.focus();
   };
+
   return (
     <div
       className="multi-select-autocomplete"

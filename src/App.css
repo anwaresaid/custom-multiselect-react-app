@@ -8,6 +8,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: cornsilk;
+  border-radius: 5%;
+  padding: 10px;
 }
 h1 {
   color: rgb(20, 20, 71);
